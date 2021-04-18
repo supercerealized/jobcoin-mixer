@@ -4,7 +4,7 @@ import re
 from click.testing import CliRunner
 
 
-from jobcoin import config
+from jobcoin import jobcoin_config
 import cli
 
 
