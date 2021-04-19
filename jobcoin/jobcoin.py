@@ -59,7 +59,7 @@ class JobcoinClient(object):
 				expectedAmount = None,
 				keeping_open = False,
 				validate_address = False):
-		# can be passed with only the validate_address param set to true before passing deposit address to user
+		# can be passed with only the depositAddress and validate_address param set to true before passing deposit address to user
 
 		depositAddress_data = get_balance_and_transactions(depositAddress)
 		depositAddress_balance = depositAddress_data['balance']
@@ -67,22 +67,30 @@ class JobcoinClient(object):
 			return 'account_in_use'
 		if validate_address is True:
 			return 'account_empty'
-		else:
-			initial_depositAddress_balance = depositAddress_balance
-			while initial_depositAddress_balance == depositAddress_balance:
-				print('checking balance')
-				depositAddress_balance = get_balance_and_transactions(depositAddress)['balance']
-				sleep(10)
+
+		initial_depositAddress_balance = depositAddress_balance
+		while initial_depositAddress_balance == depositAddress_balance:
+			print('checking balance')
+			depositAddress_balance = get_balance_and_transactions(depositAddress)['balance']
+			sleep(10)
+		if expectedAmount != None:
+		# amount specified - poll depositAccount until the expectedAmount is reached
 			if float(depositAddress_balance) - float(initial_depositAddress_balance) == float(expectedAmount):
 				return {'expected_deposit_received':'true',
 				'depositAddress_balance':depositAddress_balance,
-				'expected':expectedAmount}
+				'expectedAmount':expectedAmount}
 			else:
 				delta = float(expectedAmount) - float(depositAddress_balance)
 				return {'expected_deposit_received':'false',
 				'depositAddress_balance':depositAddress_balance,
-				'expected':expectedAmount,
+				'expectedAmount':expectedAmount,
 				'still_awaiting':delta}
+		else:
+		# poll and return after first transaction
+			return {'expected_deposit_received':'true',
+			'depositAddress_balance':depositAddress_balance,
+			'expectedAmount':expectedAmount}
+
 
 
 

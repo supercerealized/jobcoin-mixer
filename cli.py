@@ -5,6 +5,7 @@ import sys
 import click
 
 from jobcoin import jobcoin
+client = jobcoin.JobcoinClient()
 
 
 @click.command()
@@ -20,35 +21,52 @@ def main(args=None):
             default='',
             show_default=False)
         if addresses.strip() == '':
-            sys.exit(0)
+            sys.exit(0) # use click
+        partial_deposits = click.prompt(
+            '\nRun in partial deposit mode?: ',
+            prompt_suffix='[Y/y for yes blank for no] > ',
+            default='no',
+            show_default=True)
+        if partial_deposits != 'no':
+            expectedAmount = click.prompt(
+                '\nEnter the total amount of Jobcoins you will be mixing: ')
+        else:
+            expectedAmount = None
 
         depositAddress = uuid.uuid4().hex
-        depositAddress_status = poll_and_process_deposit(validate_address = True)
+        depositAddress_status = client.poll_and_process_deposit(validate_address = True)
         if depositAddress_status == 'account_in_use':
             while depositAddress_status == 'account_in_use':
                 depositAddress = uuid.uuid4().hex
-                depositAddress_status = poll_and_process_deposit(validate_address = True)
+                depositAddress_status = client.poll_and_process_deposit(validate_address = True)
 
         click.echo(
             '\nYou may now send Jobcoins to address {depositAddress}. They '
             'will be mixed and sent to your destination addresses.\n'
               .format(depositAddress=depositAddress))
 
-        depositAddress_transaction = poll_and_process_deposit(
+        depositAddress_transaction = client.poll_and_process_deposit(
             depositAddress = depositAddress,
             expectedAmount = expectedAmount,
             keeping_open = False,
             validate_address = False)
+        print(depositAddress_transaction) # DEBUG
+        
         if depositAddress_transaction['expected_deposit_received'] == 'false':
             click.echo(
-                '\n - Partial deposit received! Still awaiting: '+ str(depositAddress_transaction['still_awaiting'] + 'of '+ str(depositAddress_transaction['expectedAmount'])))
+                '\n - Partial deposit received! Still awaiting: '
+                + str(depositAddress_transaction['still_awaiting'])
+                + 'of '
+                + str(depositAddress_transaction['expectedAmount']))
+            
             while depositAddress_transaction['expected_deposit_received'] == 'false':
                         depositAddress_transaction = \
-                        poll_and_process_deposit(
+                        client.poll_and_process_deposit(
                         depositAddress = depositAddress,
                         expectedAmount = expectedAmount,
                         keeping_open = True,
                         validate_address = False)
+                        print(depositAddress_transaction) # DEBUG
         if depositAddress_transaction['expected_deposit_received'] == 'true':
             click.echo(
                 '\n - Jobcoins received! They will be mixed and sent to your destination address(es)')
