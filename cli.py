@@ -8,6 +8,7 @@ from jobcoin import jobcoin
 
 
 @click.command()
+# option for sending set ammount from multiple places or in multiple transactions
 def main(args=None):
     
     print('Welcome to the Jobcoin mixer!\n')
@@ -42,11 +43,12 @@ def main(args=None):
             click.echo(
                 '\n - Partial deposit received! Still awaiting: '+ str(depositAddress_transaction['still_awaiting'] + 'of '+ str(depositAddress_transaction['expectedAmount'])))
             while depositAddress_transaction['expected_deposit_received'] == 'false':
-                        depositAddress_transaction = poll_and_process_deposit(
-                                                                        depositAddress = depositAddress,
-                                                                        expectedAmount = expectedAmount,
-                                                                        keeping_open = False,
-                                                                        validate_address = False)
+                        depositAddress_transaction = \
+                        poll_and_process_deposit(
+                        depositAddress = depositAddress,
+                        expectedAmount = expectedAmount,
+                        keeping_open = True,
+                        validate_address = False)
         if depositAddress_transaction['expected_deposit_received'] == 'true':
             click.echo(
                 '\n - Jobcoins received! They will be mixed and sent to your destination address(es)')

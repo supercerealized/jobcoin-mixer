@@ -55,10 +55,10 @@ class JobcoinClient(object):
 		return response.status_code 
 
 	def poll_and_process_deposit(self, 
-								depositAddress = None,
-								expectedAmount = None,
-								keeping_open = False,
-								validate_address = False):
+				depositAddress = None,
+				expectedAmount = None,
+				keeping_open = False,
+				validate_address = False):
 		# can be passed with only the validate_address param set to true before passing deposit address to user
 
 		depositAddress_data = get_balance_and_transactions(depositAddress)

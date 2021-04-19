@@ -33,3 +33,8 @@ def test_cli_creates_address():
         'They will be mixed and sent to your destination addresses.'
     )
     assert output_re.search(address_create_output) is not None
+
+
+
+# TESTS TO CREATE
+# fn: poll_and_process_deposit
