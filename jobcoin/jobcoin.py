@@ -74,13 +74,15 @@ class JobcoinClient(object):
 				depositAddress_balance = get_balance_and_transactions(depositAddress)['balance']
 				sleep(10)
 			if float(depositAddress_balance) - float(initial_depositAddress_balance) == float(expectedAmount):
-				return {"expected_deposit_received": {'depositAddress_balance':depositAddress_balance,
-													'expected':expectedAmount}}
+				return {'expected_deposit_received':'true',
+				'depositAddress_balance':depositAddress_balance,
+				'expected':expectedAmount}
 			else:
 				delta = float(expectedAmount) - float(depositAddress_balance)
-				return {'depositAddress_balance':depositAddress_balance,
-						'expected':expectedAmount,
-						'still_awaiting':delta}
+				return {'expected_deposit_received':'false',
+				'depositAddress_balance':depositAddress_balance,
+				'expected':expectedAmount,
+				'still_awaiting':delta}
 
 
 
