@@ -27,7 +27,7 @@ def test_cli_basic():
 
 def test_cli_creates_address():
     runner = CliRunner()
-    address_create_output = runner.invoke(cli.main, input='\n'.join(['1234,4321','n'])).output
+    address_create_output = runner.invoke(cli.main, input='1234,5678\nno\n').output
     address_re = re.compile(
         r'You may now send Jobcoins to address [0-9a-zA-Z]{32}. '
         'They will be mixed and sent to your destination addresses.'
@@ -43,3 +43,4 @@ def test_prompts():
 """
 # TESTS TO CREATE
 # fn: poll_and_process_deposit
+# fn: create_coins_and_address(toAddress)

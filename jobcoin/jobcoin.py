@@ -1,4 +1,5 @@
 import requests
+import datetime
 import json
 
 from time import sleep
@@ -103,8 +104,71 @@ class JobcoinClient(object):
 			'depositAddress_balance':depositAddress_balance,
 			'expectedAmount':expectedAmount}
 
+	def distribute_to_house_accounts(self, intakeAddress, amount, JCM_house_accounts):
+		distribution_start_timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-4]+'Z'
+		house_account_distribution = float(amount) / len(JCM_house_accounts)
+
+		for house_account in JCM_house_accounts:
+			transaction_status = send_jobcoins(intakeAddress, house_account, str(house_account_distribution))
+			print(str(transaction_status)) # DEBUG
+			if transaction_status == 422:
+				print('Insufficient funds') # DEBUG
+				get_balance_and_transactions(house_account) # DEBUG
+			else:
+				if transaction_status == 200:
+					print('successfully transfered {} to {}'.format(str(house_account_distribution), house_account))
+					get_balance_and_transactions(house_account) # DEBUG
+				else:
+					get_balance_and_transactions(house_account) # DEBUG
+		distribution_stop_timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-4]+'Z'
+		distribution_record = get_balance_and_transactions(intakeAddress)
+
+
+	def mix_house_accounts(self, JCM_house_accounts):
+		mix_house_accounts_start_timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-4]+'Z'
+		house_account_transaction_record = list()
+		for house_account in JCM_house_accounts:
+			house_account_record = get_balance_and_transactions(house_account)
+			house_account_balance = house_account_record['balance']
+			half_of_account_balance = int(float(house_account_balance) / 2)
+			house_account_distribution = int(float(half_of_account_balance) / (len(JCM_house_accounts) - 1))
+			
+			print("Mixing...")
+			for other_house_accounts in JCM_house_accounts:
+				if house_account != other_house_accounts:
+					transaction_status = send_jobcoins(house_account, other_house_accounts, str(house_account_distribution))
+				else:
+					pass
+		transaction_record = get_all_transactions_list()
+		for record in transaction_record:
+			try:
+				if 'JCM_HA' in record['fromAddress'] and record['timestamp'] > mix_house_accounts_start_timestamp:
+					house_account_transaction_record.append(str(record))
+				else:
+					pass
+			except KeyError as e:
+				pass
+		return house_account_transaction_record
 
 
 
 
 
+			
+
+
+
+
+
+'''
+for i in record['transactions']:
+	try:
+		i['fromAddress']
+	except KeyError as e:
+		pass
+
+for i in record['transactions']:
+...     if i['timestamp'] < distribution_start_timestamp and 'JCM_HA' in i['toAddress']:
+...         print(i)
+
+'''
