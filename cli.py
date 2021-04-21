@@ -80,11 +80,20 @@ def main(args=None):
         elif send_to_intake_account_status == 200:
             click.echo('[*] Funds transfered from {} to JCM_intake'.format(depositAddress)) # DEBUG
             client.distribute_to_house_accounts('JCM_intake', depositAddress_transaction['depositAddress_balance'], jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
+            
             mix_house_account_records = client.mix_house_accounts(jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
         for record in mix_house_account_records:
             print(str(record))
-        print('Done - ready to distribut payments...')
+        print('Done - ready to distribut payments...\n')
 
+        number_of_accounts_to_create = 5
+        distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
+        client.distribute_proxy_payments('JCM_accounts_payable',
+                                jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS,
+                                distribution_accounts,
+                                depositAddress_transaction['depositAddress_balance'])
+
+#distribute_proxy_payments(self, accounts_payable_address, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount)
 
 if __name__ == '__main__':
     sys.exit(main())

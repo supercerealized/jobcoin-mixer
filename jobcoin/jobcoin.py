@@ -1,6 +1,7 @@
 import requests
 import datetime
 import json
+import uuid
 
 from time import sleep
 
@@ -62,8 +63,8 @@ def create_coins_and_address(toAddress):
 	'''
 
 	data = {"address":toAddress}
-	response = request.post(jobcoin_config.CREATE_URL, data = data)
-	print(response)
+	response = requests.post(jobcoin_config.CREATE_URL, data = data)
+	return response
 
 class JobcoinClient(object):
 
@@ -149,6 +150,29 @@ class JobcoinClient(object):
 			except KeyError as e:
 				pass
 		return house_account_transaction_record
+
+	def create_accounts_to_proxy_distribution(self, number_of_accounts_to_create):
+		
+		distribution_accounts = list()
+		for account in range(number_of_accounts_to_create):
+			accountAddress = uuid.uuid4().hex
+			response = create_coins_and_address(accountAddress)
+			distribution_accounts.append(accountAddress)
+			print('[-] distribution account created {}'.format(str(response)))
+		return distribution_accounts
+
+	def distribute_proxy_payments(self, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount):
+
+		amount_distribution = float(amount) / len(distribution_accounts)
+		amount_collection = int(amount_distribution / len(JCM_house_accounts))
+		for distribution_account in distribution_accounts:
+			print('[-] collecting funds for distribution_account: {}'.format(str(distribution_account)))
+			for house_account in JCM_house_accounts:
+				print('[-] collecting {} from {}'.format(amount_collection, house_account))
+				send_jobcoins(house_account, distribution_account, amount_collection)
+		return
+
+	#def send_proxy_payments_to_user_accounts():
 
 
 
