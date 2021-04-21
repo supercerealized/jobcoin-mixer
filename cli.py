@@ -24,7 +24,7 @@ def main(args=None):
             sys.exit(0) # use click
         partial_deposits = click.prompt(
             '\nRun in partial deposit mode?: ',
-            prompt_suffix='[Y/y for yes blank for no] > ',
+            prompt_suffix=' > ',
             default='no',
             show_default=True)
         if partial_deposits != 'no':
@@ -56,7 +56,7 @@ def main(args=None):
             click.echo(
                 '\n - Partial deposit received! Still awaiting: '
                 + str(depositAddress_transaction['still_awaiting'])
-                + 'of '
+                + ' of '
                 + str(depositAddress_transaction['expectedAmount']))
             
             while depositAddress_transaction['expected_deposit_received'] == 'false':
@@ -71,6 +71,7 @@ def main(args=None):
             click.echo(
                 '\n - Jobcoins received! They will be mixed and sent to your destination address(es)')
             # send to mixer
+        send_to_house_account_status = jobcoin.send_jobcoins(depositAddress, 'JCM_intake', depositAddress_transaction['depositAddress_balance'] )
 
 if __name__ == '__main__':
     sys.exit(main())

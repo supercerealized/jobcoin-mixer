@@ -52,6 +52,18 @@ def send_jobcoins(fromAddress, toAddress, amount):
 	response = requests.post(jobcoin_config.API_TRANSACTIONS_URL, data = data)
 	return response.status_code 
 
+def create_coins_and_address(toAddress):
+	'''
+	this is not functionality exposed/documented in the api.
+	this is equivilent to interacting with the "Create 50 New Jobcoins" 
+	button on the Jobcoin website
+	CREATE_URL = 'https://jobcoin.gemini.com/undaunted-gossip/create?address=ADDRESS'
+	'''
+
+	data = {"address":toAddress}
+	response = request.post(jobcoin_config.CREATE_URL, data = data)
+	print(response)
+
 class JobcoinClient(object):
 
 	def poll_and_process_deposit(self, 
@@ -90,6 +102,8 @@ class JobcoinClient(object):
 			return {'expected_deposit_received':'true',
 			'depositAddress_balance':depositAddress_balance,
 			'expectedAmount':expectedAmount}
+
+
 
 
 

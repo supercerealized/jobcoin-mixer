@@ -27,14 +27,19 @@ def test_cli_basic():
 
 def test_cli_creates_address():
     runner = CliRunner()
-    address_create_output = runner.invoke(cli.main, input='1234,4321').output
-    output_re = re.compile(
+    address_create_output = runner.invoke(cli.main, input='\n'.join(['1234,4321','n'])).output
+    address_re = re.compile(
         r'You may now send Jobcoins to address [0-9a-zA-Z]{32}. '
         'They will be mixed and sent to your destination addresses.'
     )
-    assert output_re.search(address_create_output) is not None
+    assert address_re.search(address_create_output) is not None
 
-
-
+"""
+def test_prompts():
+   runner = CliRunner()
+   result = runner.invoke(prompt, input='wau wau\n')
+   assert not result.exception
+   assert result.output == 'Foo: wau wau\nfoo=wau wau\n'
+"""
 # TESTS TO CREATE
 # fn: poll_and_process_deposit
