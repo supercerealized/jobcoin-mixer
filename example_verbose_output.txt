@@ -1,4 +1,4 @@
-ccs@ccs-Surface-Laptop-2:~/dev/python/jobcoin_python/jobcoin-mixer
+~/dev/python/jobcoin_python/jobcoin-mixer
 $ python cli.py 
 Welcome to the Jobcoin mixer!
 
@@ -176,4 +176,5 @@ Done - ready to distribute payments...
 [-] collecting 0.9110999999999999 from JCM_HA7
 [-] collecting 0.9110999999999999 from JCM_HA8
 [-] collecting 0.9110999999999999 from JCM_HA9
-done
+Done
+[*] Mixed coins sent to user addresses
