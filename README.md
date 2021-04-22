@@ -45,6 +45,6 @@
 4. If this is shipping as mixing self-service software, may want to examine the JA3 JA3S fingerprint for client networking opsec
 5. Further stress testing/edge case analysis on the jobcoin p2p network will help define exception handling requirements/enhancements
 6. More cleanup after distribution accounts complete their work  
-7. Currenlty verbose by design for assessment -- can use logging library with flags for verbose/DEBUG implementation.
+7. Currently verbose by design for assessment -- can use logging library with flags for verbose/DEBUG implementation.
 	* verbosity should be assessed against privacy constraints when implemented (see 1.).
 	* even when implemented as a hosted service there may be an expectation or preference for a zero log policy
