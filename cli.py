@@ -25,16 +25,20 @@ def main(args=None):
         user_addresses_list = user_addresses.split(',')
         #print(type(user_addresses)) # DEBUG
         #print(user_addresses) # DEBUG
+        
+        """
         partial_deposits = click.prompt(
             '\nRun in partial deposit mode?: ',
             prompt_suffix=' > ',
             default='no',
             show_default=True)
-        if partial_deposits != 'no':
+        if partial_deposits.lower() != 'no':
             expectedAmount = click.prompt(
                 '\nEnter the total amount of Jobcoins you will be mixing: ')
         else:
             expectedAmount = None
+        """
+        expectedAmount = None
 
         # initializing deposit address
         depositAddress = uuid.uuid4().hex
