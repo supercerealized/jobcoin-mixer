@@ -1,4 +1,37 @@
 # Jobcoin-Mixer
+
+## Getting Started
+
+```
+[
+  $ mkdir jobcoin-mixer
+
+  $ cd jobcoin-mixer
+
+  $ virtualenv venv
+  created virtual environment CPython3.8.5.final.0-64 in 206ms
+  [...]
+
+  $ source venv/bin/activate
+  (venv) user@host:
+
+  $ git clone https://github.com/supercerealized/jobcoin-mixer.git
+
+  Cloning into 'jobcoin-mixer'...
+  remote: Enumerating objects: 107, done.
+  remote: Counting objects: 100% (107/107), done.
+  remote: Compressing objects: 100% (73/73), done.
+  remote: Total 107 (delta 66), reused 67 (delta 30), pack-reused 0
+  Receiving objects: 100% (107/107), 253.44 KiB | 2.03 MiB/s, done.
+  Resolving deltas: 100% (66/66), done.
+
+  $ pip3 install -r requirements.txt
+  $ python3 cli.py 
+    Welcome to the Jobcoin mixer!
+
+]
+```
+
 ## Process Flowchart
 ![jobcoin_diag](https://user-images.githubusercontent.com/82118903/115753675-74b75e80-a369-11eb-82f6-1cc68dd9af8b.png)
 
