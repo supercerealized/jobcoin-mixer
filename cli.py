@@ -82,15 +82,19 @@ def main(args=None):
             click.echo('[!] Insufficient funds to perform this transaction for address: {}'.format(depositAddress))
         elif send_to_intake_account_status == 200:
             click.echo('[*] Funds transfered from {} to JCM_intake'.format(depositAddress)) # DEBUG
+        # send from intake account to jcm mixing accounts    
             client.distribute_to_house_accounts('JCM_intake', depositAddress_transaction['depositAddress_balance'], jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
             
+        # have jcm mixing accounts half of thier balance with the other house accounts
             mix_house_account_records = client.mix_house_accounts(jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
         for record in mix_house_account_records:
             print(str(record))
-        print('Done - ready to distribut payments...\n')
+        print('Done - ready to distribute payments...\n')
 
-        number_of_accounts_to_create = 5
+        # create throwaway accounts to proxy payments from the mixer
+        number_of_accounts_to_create = 3
         distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
+        # send 
         distribution_account_data = client.distribute_proxy_payments('JCM_accounts_payable',
                                 jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS,
                                 distribution_accounts,

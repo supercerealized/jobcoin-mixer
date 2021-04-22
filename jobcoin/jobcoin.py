@@ -156,14 +156,15 @@ class JobcoinMixerClient(object):
 		return distribution_accounts
 
 	def distribute_proxy_payments(self, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount):
+		# not utilizing JCM_accounts_payable here - going directly from house accounts to distribution accounts
 
 		amount_distribution = float(amount) / len(distribution_accounts)
-		amount_collection = int(amount_distribution / len(JCM_house_accounts))
+		amount_collection = amount_distribution / len(JCM_house_accounts)
 		for distribution_account in distribution_accounts:
 			print('[-] collecting funds for distribution_account: {}'.format(str(distribution_account)))
 			for house_account in JCM_house_accounts:
-				print('[-] collecting {} from {}'.format(amount_collection, house_account))
-				send_jobcoins(house_account, distribution_account, amount_collection)
+				print('[-] collecting {} from {}'.format(str(amount_collection), house_account))
+				send_jobcoins(house_account, distribution_account, str(amount_collection))
 		distribution_account_data = {'amount_distribution': str(amount_distribution),'distribution_accounts': distribution_accounts}
 		return distribution_account_data
 
@@ -174,28 +175,13 @@ class JobcoinMixerClient(object):
 			distribution_account_balance = distribution_account_record['balance']
 
 			if amount_distribution <= distribution_account_balance:
-				amount_distribution_per_user_account = int(float(amount_distribution) / len(user_accounts))
+				amount_distribution_per_user_account = float(amount_distribution) / len(user_accounts)
 				for user_account in user_accounts:
 					print('[-] sending to user account {} from distribution account {}'.format(user_account,distribution_account))
-					transaction_status = send_jobcoins(distribution_account, user_account, amount_distribution_per_user_account)
+					transaction_status = send_jobcoins(distribution_account, user_account, str(amount_distribution_per_user_account))
 					if transaction_status == 422:
 						return {'transaction_failed_insufficient_funds':str(distribution_account)}
 					else:
 						pass
 		return
-
-
-
-
-'''
-for i in record['transactions']:
-	try:
-		i['fromAddress']
-	except KeyError as e:
-		pass
-
-for i in record['transactions']:
-...     if i['timestamp'] < distribution_start_timestamp and 'JCM_HA' in i['toAddress']:
-...         print(i)
-
-'''
+		
