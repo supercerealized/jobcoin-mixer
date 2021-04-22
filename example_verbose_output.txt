@@ -177,4 +177,7 @@ Done - ready to distribute payments...
 [-] collecting 0.9110999999999999 from JCM_HA8
 [-] collecting 0.9110999999999999 from JCM_HA9
 Done
+[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 5ce97796e4234a5d806ddd39104ec569
+[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 33b884378af141b681dec39f80ce58f5
+[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 5a9c8b23093d4402baf4dde6da7e97e3
 [*] Mixed coins sent to user addresses

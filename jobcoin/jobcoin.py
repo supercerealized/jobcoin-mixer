@@ -78,9 +78,9 @@ class JobcoinMixerClient(object):
 
 		initial_depositAddress_balance = depositAddress_balance
 		while initial_depositAddress_balance == depositAddress_balance:
-			print('checking balance')
+			print('Checking balance @ depositAddress: 'depositAddress)
 			depositAddress_balance = get_balance_and_transactions(depositAddress)['balance']
-			sleep(10)
+			sleep(5)
 		if expectedAmount != None:
 		# amount specified - poll depositAccount until the expectedAmount is reached
 			if float(depositAddress_balance) - float(initial_depositAddress_balance) == float(expectedAmount):
