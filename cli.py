@@ -5,7 +5,7 @@ import sys
 import click
 
 from jobcoin import jobcoin
-client = jobcoin.JobcoinClient()
+client = jobcoin.JobcoinMixerClient()
 
 
 @click.command()
@@ -14,14 +14,17 @@ def main(args=None):
     
     print('Welcome to the Jobcoin mixer!\n')
     while True:
-        addresses = click.prompt(
+        user_addresses = click.prompt(
             'Please enter a comma-separated list of new, unused Jobcoin '
             'addresses where your mixed Jobcoins will be sent.',
             prompt_suffix='\n[blank to quit] > ',
             default='',
             show_default=False)
-        if addresses.strip() == '':
+        if user_addresses.strip() == '':
             sys.exit(0) # use click
+        user_addresses_list = user_addresses.split(',')
+        print(type(user_addresses)) # DEBUG
+        print(user_addresses) # DEBUG
         partial_deposits = click.prompt(
             '\nRun in partial deposit mode?: ',
             prompt_suffix=' > ',
@@ -88,10 +91,15 @@ def main(args=None):
 
         number_of_accounts_to_create = 5
         distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
-        client.distribute_proxy_payments('JCM_accounts_payable',
+        distribution_account_data = client.distribute_proxy_payments('JCM_accounts_payable',
                                 jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS,
                                 distribution_accounts,
                                 depositAddress_transaction['depositAddress_balance'])
+        
+        amount_distribution = distribution_account_data['amount_distribution']
+        
+        client.send_proxy_payments_to_user_accounts(distribution_accounts, amount_distribution, user_addresses_list)
+        print('done')
 
 #distribute_proxy_payments(self, accounts_payable_address, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount)
 

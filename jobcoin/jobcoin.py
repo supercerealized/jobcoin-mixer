@@ -12,7 +12,6 @@ def get_balance_and_transactions(address):
 
 	# TO DO: CHECK VARIABLE TYPE
 	# isinstance(address, str)
-
 	"""
 	address endpoint will never return 404 for an unused address, 
 	it will return a balance of 0 and an empty list of transactions. 
@@ -26,8 +25,6 @@ def get_balance_and_transactions(address):
 
 def get_all_transactions_list():
 	# Base endpoint utility
-
-
 	"""
 	Numbers are returned as strings 
 	No 'fromAddress' indicates the Jobcoins were created on the Jobcoin website 
@@ -39,12 +36,10 @@ def get_all_transactions_list():
 
 def send_jobcoins(fromAddress, toAddress, amount):
 	# Base endpoint utility
-
 	# TO DO: CHECK VARIABLE TYPE
 	# isinstance(fromAddress, str)
 	# isinstance(toAddress, str)
 	# isinstance(amount, str)
-
 	"""
 	<Response [200]> 'status': 'OK'
 	<Response [422]> 'error': 'Insufficient Funds'
@@ -61,19 +56,18 @@ def create_coins_and_address(toAddress):
 	button on the Jobcoin website
 	CREATE_URL = 'https://jobcoin.gemini.com/undaunted-gossip/create?address=ADDRESS'
 	'''
-
 	data = {"address":toAddress}
 	response = requests.post(jobcoin_config.CREATE_URL, data = data)
 	return response
 
-class JobcoinClient(object):
+class JobcoinMixerClient(object):
 
 	def poll_and_process_deposit(self, 
 				depositAddress = None,
 				expectedAmount = None,
 				keeping_open = False,
 				validate_address = False):
-		# can be passed with only the depositAddress and validate_address param set to true before passing deposit address to user
+		# fn overloaded; can be passed with only the depositAddress and validate_address param set to true before passing deposit address to user
 
 		depositAddress_data = get_balance_and_transactions(depositAddress)
 		depositAddress_balance = depositAddress_data['balance']
@@ -170,16 +164,25 @@ class JobcoinClient(object):
 			for house_account in JCM_house_accounts:
 				print('[-] collecting {} from {}'.format(amount_collection, house_account))
 				send_jobcoins(house_account, distribution_account, amount_collection)
+		distribution_account_data = {'amount_distribution': str(amount_distribution),'distribution_accounts': distribution_accounts}
+		return distribution_account_data
+
+	def send_proxy_payments_to_user_accounts(self, distribution_accounts, amount_distribution, user_accounts):
+		
+		for distribution_account in distribution_accounts:
+			distribution_account_record = get_balance_and_transactions(distribution_account)
+			distribution_account_balance = distribution_account_record['balance']
+
+			if amount_distribution <= distribution_account_balance:
+				amount_distribution_per_user_account = int(float(amount_distribution) / len(user_accounts))
+				for user_account in user_accounts:
+					print('[-] sending to user account {} from distribution account {}'.format(user_account,distribution_account))
+					transaction_status = send_jobcoins(distribution_account, user_account, amount_distribution_per_user_account)
+					if transaction_status == 422:
+						return {'transaction_failed_insufficient_funds':str(distribution_account)}
+					else:
+						pass
 		return
-
-	#def send_proxy_payments_to_user_accounts():
-
-
-
-
-
-			
-
 
 
 
