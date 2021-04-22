@@ -24,9 +24,10 @@
   Receiving objects: 100% (107/107), 253.44 KiB | 2.03 MiB/s, done.
   Resolving deltas: 100% (66/66), done.
 
-  $ pip3 install -r requirements.txt
-  $ python3 cli.py 
-    Welcome to the Jobcoin mixer!
+  $ pip3 install -r jobcoin-mixer/requirements.txt
+  $ python3 jobcoin-mixer/cli.py 
+    	Welcome to the Jobcoin mixer!
+	[ follow prompts ]
 
 ```
 
