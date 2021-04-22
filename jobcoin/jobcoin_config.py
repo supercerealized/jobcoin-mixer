@@ -6,6 +6,8 @@ API_TRANSACTIONS_URL = '{}/transactions'.format(API_BASE_URL)
 CREATE_URL = 'https://jobcoin.gemini.com/undaunted-gossip/create'
 # *not an api endpoint
 
+# when looking for house accounts
+# dependency on naming convention: 'JCM_HA*'
 JCM_HOUSE_ACCOUNTS = [
 'JCM_HA0',
 'JCM_HA1',
@@ -18,3 +20,7 @@ JCM_HOUSE_ACCOUNTS = [
 'JCM_HA8',
 'JCM_HA9'
 ]
+
+# distribution accounts
+# dynamic generation of accounts to proxy distribution
+number_of_accounts_to_create = 3

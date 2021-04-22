@@ -23,8 +23,8 @@ def main(args=None):
         if user_addresses.strip() == '':
             sys.exit(0) # use click
         user_addresses_list = user_addresses.split(',')
-        print(type(user_addresses)) # DEBUG
-        print(user_addresses) # DEBUG
+        #print(type(user_addresses)) # DEBUG
+        #print(user_addresses) # DEBUG
         partial_deposits = click.prompt(
             '\nRun in partial deposit mode?: ',
             prompt_suffix=' > ',
@@ -92,7 +92,7 @@ def main(args=None):
         print('Done - ready to distribute payments...\n')
 
         # create throwaway accounts to proxy payments from the mixer
-        number_of_accounts_to_create = 3
+         number_of_accounts_to_create = jobcoin.jobcoin_config.number_of_accounts_to_create
         distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
         # send 
         distribution_account_data = client.distribute_proxy_payments('JCM_accounts_payable',
