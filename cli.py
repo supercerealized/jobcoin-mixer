@@ -85,16 +85,16 @@ def main(args=None):
         # send from intake account to jcm mixing accounts    
             client.distribute_to_house_accounts('JCM_intake', depositAddress_transaction['depositAddress_balance'], jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
             
-        # have jcm mixing accounts half of thier balance with the other house accounts
+        # jcm mixing accounts split half of thier balance across the other house accounts
             mix_house_account_records = client.mix_house_accounts(jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS)
-        for record in mix_house_account_records:
-            print(str(record))
+        #for record in mix_house_account_records: # DEBUG
+        #    print(str(record)) # DEBUG - output all transaction records from last mix_house_accounts call
         print('Done - ready to distribute payments...\n')
 
         # create throwaway accounts to proxy payments from the mixer
         number_of_accounts_to_create = jobcoin.jobcoin_config.number_of_accounts_to_create
         distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
-        # send 
+        # collect mixed coins into distribution accounts 
         distribution_account_data = client.distribute_proxy_payments('JCM_accounts_payable',
                                 jobcoin.jobcoin_config.JCM_HOUSE_ACCOUNTS,
                                 distribution_accounts,
@@ -102,10 +102,10 @@ def main(args=None):
         
         amount_distribution = distribution_account_data['amount_distribution']
         
+        # send mixed coins to user accounts
         client.send_proxy_payments_to_user_accounts(distribution_accounts, amount_distribution, user_addresses_list)
-        print('done')
-
-#distribute_proxy_payments(self, accounts_payable_address, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount)
+        print('[*] Mixed coins sent to user addresses')
+        sys.exit(0)
 
 if __name__ == '__main__':
     sys.exit(main())

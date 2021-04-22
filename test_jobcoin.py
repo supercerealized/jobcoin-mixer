@@ -34,13 +34,14 @@ def test_cli_creates_address():
     )
     assert address_re.search(address_create_output) is not None
 
-"""
-def test_prompts():
-   runner = CliRunner()
-   result = runner.invoke(prompt, input='wau wau\n')
-   assert not result.exception
-   assert result.output == 'Foo: wau wau\nfoo=wau wau\n'
-"""
-# TESTS TO CREATE
-# fn: poll_and_process_deposit
-# fn: create_coins_and_address(toAddress)
+
+# fn unit tests todo with static implementation:
+# fn: poll_and_process_deposit -- assertions on return dict {'expected_deposit_received':'true', 'depositAddress_balance':depositAddress_balance, 'expectedAmount':expectedAmount}
+# fn: create_coins_and_address(toAddress) -- assertions on response: response = requests.post(jobcoin_config.CREATE_URL, data = data)
+# fn: mix_house_accounts(self, JCM_house_accounts) -- assertion on house_account_transaction_record
+# fn: create_accounts_to_proxy_distribution(self, number_of_accounts_to_create) -- validates on response
+# fn: distribute_proxy_payments(self, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount) -- assertions on distribution_account_data
+# fn: send_proxy_payments_to_user_accounts(self, distribution_accounts, user_accounts) -- validates on response
+
+# val unit tests to do with static implementation:
+# val: number_of_accounts_to_create from jobcoin.jobcoin_config
