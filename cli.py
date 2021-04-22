@@ -92,7 +92,7 @@ def main(args=None):
         print('Done - ready to distribute payments...\n')
 
         # create throwaway accounts to proxy payments from the mixer
-         number_of_accounts_to_create = jobcoin.jobcoin_config.number_of_accounts_to_create
+        number_of_accounts_to_create = jobcoin.jobcoin_config.number_of_accounts_to_create
         distribution_accounts = client.create_accounts_to_proxy_distribution(number_of_accounts_to_create)
         # send 
         distribution_account_data = client.distribute_proxy_payments('JCM_accounts_payable',

@@ -2,7 +2,7 @@
 ## Process Flowchart
 ![jobcoin_diag](https://user-images.githubusercontent.com/82118903/115753675-74b75e80-a369-11eb-82f6-1cc68dd9af8b.png)
 
-# Enhancements/Implementation Concepts
+## Enhancements/Implementation Concepts
 1. Jobcoin-mixer API in the event we want to host this service
 	* Primary opsec benefits
 		* All jobcoin p2p actions don't originate from users network
