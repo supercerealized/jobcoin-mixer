@@ -1,43 +1,45 @@
-~/dev/python/jobcoin_python/jobcoin-mixer
 $ python cli.py 
 Welcome to the Jobcoin mixer!
 
 Please enter a comma-separated list of new, unused Jobcoin addresses where your mixed Jobcoins will be sent.
-[blank to quit] > demo_useraddress_1,demo_useraddress_2,demo_useraddress3
+[blank to quit] > deposit_demo_ex1,deposit_demo_ex2,deposit_demo_ex3
 
-Run in partial deposit mode?:  [no] > 
+You may now send Jobcoins to address ef7fcc85edc145339d3fe6b993c0f391. They will be mixed and sent to your destination addresses.
 
-You may now send Jobcoins to address dbff366120a8429ab19ced6cf92b0bcb. They will be mixed and sent to your destination addresses.
-
-checking balance
-checking balance
-checking balance
-checking balance
-checking balance
-{'expected_deposit_received': 'true', 'depositAddress_balance': '27.333', 'expectedAmount': None}
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
+{'expected_deposit_received': 'true', 'depositAddress_balance': '43.33', 'expectedAmount': None}
 
  - Jobcoins received! They will be mixed and sent to your destination address(es)
-[*] Funds transfered from dbff366120a8429ab19ced6cf92b0bcb to JCM_intake
+[*] Funds transfered from ef7fcc85edc145339d3fe6b993c0f391 to JCM_intake
 200
-successfully transfered 2.7333 to JCM_HA0
+successfully transfered 4.333 to JCM_HA0
 200
-successfully transfered 2.7333 to JCM_HA1
+successfully transfered 4.333 to JCM_HA1
 200
-successfully transfered 2.7333 to JCM_HA2
+successfully transfered 4.333 to JCM_HA2
 200
-successfully transfered 2.7333 to JCM_HA3
+successfully transfered 4.333 to JCM_HA3
 200
-successfully transfered 2.7333 to JCM_HA4
+successfully transfered 4.333 to JCM_HA4
 200
-successfully transfered 2.7333 to JCM_HA5
+successfully transfered 4.333 to JCM_HA5
 200
-successfully transfered 2.7333 to JCM_HA6
+successfully transfered 4.333 to JCM_HA6
 200
-successfully transfered 2.7333 to JCM_HA7
+successfully transfered 4.333 to JCM_HA7
 200
-successfully transfered 2.7333 to JCM_HA8
+successfully transfered 4.333 to JCM_HA8
 200
-successfully transfered 2.7333 to JCM_HA9
+successfully transfered 4.333 to JCM_HA9
 Mixing...
 Mixing...
 Mixing...
@@ -48,136 +50,52 @@ Mixing...
 Mixing...
 Mixing...
 Mixing...
-{'timestamp': '2021-04-22T18:48:53.240Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:53.394Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:53.532Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:53.734Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:53.877Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:53.989Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:54.112Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:54.249Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:54.484Z', 'fromAddress': 'JCM_HA0', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:54.756Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:54.847Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:55.052Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:55.257Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:55.471Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:55.926Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:56.352Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:56.527Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:56.735Z', 'fromAddress': 'JCM_HA1', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:48:57.635Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA0', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:57.807Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA1', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:58.440Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA3', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:58.665Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA4', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:58.854Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA5', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:59.137Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA6', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:59.344Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA7', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:59.598Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA8', 'amount': '7'}
-{'timestamp': '2021-04-22T18:48:59.857Z', 'fromAddress': 'JCM_HA2', 'toAddress': 'JCM_HA9', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:00.419Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:00.683Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:00.903Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:01.059Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:01.279Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:01.625Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:01.960Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:02.155Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:02.388Z', 'fromAddress': 'JCM_HA3', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:03.091Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:03.372Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:03.668Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:03.946Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:04.101Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:04.348Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:04.605Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:04.803Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:05.048Z', 'fromAddress': 'JCM_HA4', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:05.333Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA0', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:05.511Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA1', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:05.703Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA2', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:06.054Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA3', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:06.328Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA4', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:06.583Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA6', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:06.766Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA7', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:06.934Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA8', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:07.073Z', 'fromAddress': 'JCM_HA5', 'toAddress': 'JCM_HA9', 'amount': '7'}
-{'timestamp': '2021-04-22T18:49:07.511Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:07.706Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:07.901Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.026Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.211Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.388Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.582Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.741Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:08.937Z', 'fromAddress': 'JCM_HA6', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:09.420Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:09.607Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:09.749Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:09.855Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:09.968Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.093Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.185Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.291Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA8', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.392Z', 'fromAddress': 'JCM_HA7', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.636Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:10.763Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.047Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.166Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.281Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.390Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.513Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.618Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.724Z', 'fromAddress': 'JCM_HA8', 'toAddress': 'JCM_HA9', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:11.998Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA0', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.116Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA1', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.314Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA2', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.493Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA3', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.737Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA4', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.843Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA5', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:12.942Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA6', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:13.056Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA7', 'amount': '6'}
-{'timestamp': '2021-04-22T18:49:13.163Z', 'fromAddress': 'JCM_HA9', 'toAddress': 'JCM_HA8', 'amount': '6'}
 Done - ready to distribute payments...
 
 [-] distribution account created <Response [200]>
 [-] distribution account created <Response [200]>
 [-] distribution account created <Response [200]>
-[-] collecting funds for distribution_account: 94d2e6b328464a319a6fe0f456d4df7c
-[-] collecting 0.9110999999999999 from JCM_HA0
-[-] collecting 0.9110999999999999 from JCM_HA1
-[-] collecting 0.9110999999999999 from JCM_HA2
-[-] collecting 0.9110999999999999 from JCM_HA3
-[-] collecting 0.9110999999999999 from JCM_HA4
-[-] collecting 0.9110999999999999 from JCM_HA5
-[-] collecting 0.9110999999999999 from JCM_HA6
-[-] collecting 0.9110999999999999 from JCM_HA7
-[-] collecting 0.9110999999999999 from JCM_HA8
-[-] collecting 0.9110999999999999 from JCM_HA9
-[-] collecting funds for distribution_account: d9d1d5e3e72941f799402710b0547d90
-[-] collecting 0.9110999999999999 from JCM_HA0
-[-] collecting 0.9110999999999999 from JCM_HA1
-[-] collecting 0.9110999999999999 from JCM_HA2
-[-] collecting 0.9110999999999999 from JCM_HA3
-[-] collecting 0.9110999999999999 from JCM_HA4
-[-] collecting 0.9110999999999999 from JCM_HA5
-[-] collecting 0.9110999999999999 from JCM_HA6
-[-] collecting 0.9110999999999999 from JCM_HA7
-[-] collecting 0.9110999999999999 from JCM_HA8
-[-] collecting 0.9110999999999999 from JCM_HA9
-[-] collecting funds for distribution_account: a9d2bff515a44ffb8eb861d659489e77
-[-] collecting 0.9110999999999999 from JCM_HA0
-[-] collecting 0.9110999999999999 from JCM_HA1
-[-] collecting 0.9110999999999999 from JCM_HA2
-[-] collecting 0.9110999999999999 from JCM_HA3
-[-] collecting 0.9110999999999999 from JCM_HA4
-[-] collecting 0.9110999999999999 from JCM_HA5
-[-] collecting 0.9110999999999999 from JCM_HA6
-[-] collecting 0.9110999999999999 from JCM_HA7
-[-] collecting 0.9110999999999999 from JCM_HA8
-[-] collecting 0.9110999999999999 from JCM_HA9
-Done
-[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 5ce97796e4234a5d806ddd39104ec569
-[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 33b884378af141b681dec39f80ce58f5
-[-] sending to user account dbff366120a8429ab19ced6cf92b0bcb from distribution account 5a9c8b23093d4402baf4dde6da7e97e3
+[-] collecting funds for distribution_account: 630492b9fe8748678685c99760a5662f
+[-] collecting 1.4443333333333332 from JCM_HA0
+[-] collecting 1.4443333333333332 from JCM_HA1
+[-] collecting 1.4443333333333332 from JCM_HA2
+[-] collecting 1.4443333333333332 from JCM_HA3
+[-] collecting 1.4443333333333332 from JCM_HA4
+[-] collecting 1.4443333333333332 from JCM_HA5
+[-] collecting 1.4443333333333332 from JCM_HA6
+[-] collecting 1.4443333333333332 from JCM_HA7
+[-] collecting 1.4443333333333332 from JCM_HA8
+[-] collecting 1.4443333333333332 from JCM_HA9
+[-] collecting funds for distribution_account: 81191cadd54b4a649c25acd279f4159a
+[-] collecting 1.4443333333333332 from JCM_HA0
+[-] collecting 1.4443333333333332 from JCM_HA1
+[-] collecting 1.4443333333333332 from JCM_HA2
+[-] collecting 1.4443333333333332 from JCM_HA3
+[-] collecting 1.4443333333333332 from JCM_HA4
+[-] collecting 1.4443333333333332 from JCM_HA5
+[-] collecting 1.4443333333333332 from JCM_HA6
+[-] collecting 1.4443333333333332 from JCM_HA7
+[-] collecting 1.4443333333333332 from JCM_HA8
+[-] collecting 1.4443333333333332 from JCM_HA9
+[-] collecting funds for distribution_account: 3c4582980d964fa8b664f361060876e8
+[-] collecting 1.4443333333333332 from JCM_HA0
+[-] collecting 1.4443333333333332 from JCM_HA1
+[-] collecting 1.4443333333333332 from JCM_HA2
+[-] collecting 1.4443333333333332 from JCM_HA3
+[-] collecting 1.4443333333333332 from JCM_HA4
+[-] collecting 1.4443333333333332 from JCM_HA5
+[-] collecting 1.4443333333333332 from JCM_HA6
+[-] collecting 1.4443333333333332 from JCM_HA7
+[-] collecting 1.4443333333333332 from JCM_HA8
+[-] collecting 1.4443333333333332 from JCM_HA9
+[-] sending to user account deposit_demo_ex1 from distribution account 630492b9fe8748678685c99760a5662f
+[-] sending to user account deposit_demo_ex2 from distribution account 630492b9fe8748678685c99760a5662f
+[-] sending to user account deposit_demo_ex3 from distribution account 630492b9fe8748678685c99760a5662f
+[-] sending to user account deposit_demo_ex1 from distribution account 81191cadd54b4a649c25acd279f4159a
+[-] sending to user account deposit_demo_ex2 from distribution account 81191cadd54b4a649c25acd279f4159a
+[-] sending to user account deposit_demo_ex3 from distribution account 81191cadd54b4a649c25acd279f4159a
+[-] sending to user account deposit_demo_ex1 from distribution account 3c4582980d964fa8b664f361060876e8
+[-] sending to user account deposit_demo_ex2 from distribution account 3c4582980d964fa8b664f361060876e8
+[-] sending to user account deposit_demo_ex3 from distribution account 3c4582980d964fa8b664f361060876e8
 [*] Mixed coins sent to user addresses
+
