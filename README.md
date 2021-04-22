@@ -3,7 +3,6 @@
 ## Getting Started
 
 ```
-[
   $ mkdir jobcoin-mixer
 
   $ cd jobcoin-mixer
@@ -29,7 +28,6 @@
   $ python3 cli.py 
     Welcome to the Jobcoin mixer!
 
-]
 ```
 
 ## Process Flowchart
