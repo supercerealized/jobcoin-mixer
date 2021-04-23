@@ -27,6 +27,8 @@
   $ pip3 install -r jobcoin-mixer/requirements.txt
   $ python3 jobcoin-mixer/cli.py 
     	Welcome to the Jobcoin mixer!
+	Please enter a comma-separated list of new, unused Jobcoin addresses where your mixed Jobcoins will be sent.
+        [blank to quit] > f_test0,f_test1,f_test2
 	[ follow prompts ]
 
 ```
