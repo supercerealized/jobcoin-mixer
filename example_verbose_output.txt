@@ -1,101 +1,198 @@
+~/dev/python/jobcoin_python/jobcoin-mixer
 $ python cli.py 
 Welcome to the Jobcoin mixer!
 
 Please enter a comma-separated list of new, unused Jobcoin addresses where your mixed Jobcoins will be sent.
-[blank to quit] > deposit_demo_ex1,deposit_demo_ex2,deposit_demo_ex3
+[blank to quit] > f_test0,f_test1,f_test2
 
-You may now send Jobcoins to address ef7fcc85edc145339d3fe6b993c0f391. They will be mixed and sent to your destination addresses.
+You may now send Jobcoins to address 85561bb596004cec959707d8311c5438. They will be mixed and sent to your destination addresses.
 
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-Checking balance @ depositAddress: ef7fcc85edc145339d3fe6b993c0f391
-{'expected_deposit_received': 'true', 'depositAddress_balance': '43.33', 'expectedAmount': None}
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+Checking balance @ depositAddress: 85561bb596004cec959707d8311c5438
+{'expected_deposit_received': 'true', 'depositAddress_balance': '1.22', 'expectedAmount': None}
 
  - Jobcoins received! They will be mixed and sent to your destination address(es)
-[*] Funds transfered from ef7fcc85edc145339d3fe6b993c0f391 to JCM_intake
+[*] Funds transfered from 85561bb596004cec959707d8311c5438 to JCM_intake
 200
-successfully transfered 4.333 to JCM_HA0
+[+] Successfully transfered 0.122 to JCM_HA0
 200
-successfully transfered 4.333 to JCM_HA1
+[+] Successfully transfered 0.122 to JCM_HA1
 200
-successfully transfered 4.333 to JCM_HA2
+[+] Successfully transfered 0.122 to JCM_HA2
 200
-successfully transfered 4.333 to JCM_HA3
+[+] Successfully transfered 0.122 to JCM_HA3
 200
-successfully transfered 4.333 to JCM_HA4
+[+] Successfully transfered 0.122 to JCM_HA4
 200
-successfully transfered 4.333 to JCM_HA5
+[+] Successfully transfered 0.122 to JCM_HA5
 200
-successfully transfered 4.333 to JCM_HA6
+[+] Successfully transfered 0.122 to JCM_HA6
 200
-successfully transfered 4.333 to JCM_HA7
+[+] Successfully transfered 0.122 to JCM_HA7
 200
-successfully transfered 4.333 to JCM_HA8
+[+] Successfully transfered 0.122 to JCM_HA8
 200
-successfully transfered 4.333 to JCM_HA9
+[+] Successfully transfered 0.122 to JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Mixing...
+Mixing JCM_HA0
+Mixing JCM_HA1
+Mixing JCM_HA2
+Mixing JCM_HA3
+Mixing JCM_HA4
+Mixing JCM_HA5
+Mixing JCM_HA6
+Mixing JCM_HA7
+Mixing JCM_HA8
+Mixing JCM_HA9
 Done - ready to distribute payments...
 
-[-] distribution account created <Response [200]>
-[-] distribution account created <Response [200]>
-[-] distribution account created <Response [200]>
-[-] collecting funds for distribution_account: 630492b9fe8748678685c99760a5662f
-[-] collecting 1.4443333333333332 from JCM_HA0
-[-] collecting 1.4443333333333332 from JCM_HA1
-[-] collecting 1.4443333333333332 from JCM_HA2
-[-] collecting 1.4443333333333332 from JCM_HA3
-[-] collecting 1.4443333333333332 from JCM_HA4
-[-] collecting 1.4443333333333332 from JCM_HA5
-[-] collecting 1.4443333333333332 from JCM_HA6
-[-] collecting 1.4443333333333332 from JCM_HA7
-[-] collecting 1.4443333333333332 from JCM_HA8
-[-] collecting 1.4443333333333332 from JCM_HA9
-[-] collecting funds for distribution_account: 81191cadd54b4a649c25acd279f4159a
-[-] collecting 1.4443333333333332 from JCM_HA0
-[-] collecting 1.4443333333333332 from JCM_HA1
-[-] collecting 1.4443333333333332 from JCM_HA2
-[-] collecting 1.4443333333333332 from JCM_HA3
-[-] collecting 1.4443333333333332 from JCM_HA4
-[-] collecting 1.4443333333333332 from JCM_HA5
-[-] collecting 1.4443333333333332 from JCM_HA6
-[-] collecting 1.4443333333333332 from JCM_HA7
-[-] collecting 1.4443333333333332 from JCM_HA8
-[-] collecting 1.4443333333333332 from JCM_HA9
-[-] collecting funds for distribution_account: 3c4582980d964fa8b664f361060876e8
-[-] collecting 1.4443333333333332 from JCM_HA0
-[-] collecting 1.4443333333333332 from JCM_HA1
-[-] collecting 1.4443333333333332 from JCM_HA2
-[-] collecting 1.4443333333333332 from JCM_HA3
-[-] collecting 1.4443333333333332 from JCM_HA4
-[-] collecting 1.4443333333333332 from JCM_HA5
-[-] collecting 1.4443333333333332 from JCM_HA6
-[-] collecting 1.4443333333333332 from JCM_HA7
-[-] collecting 1.4443333333333332 from JCM_HA8
-[-] collecting 1.4443333333333332 from JCM_HA9
-[-] sending to user account deposit_demo_ex1 from distribution account 630492b9fe8748678685c99760a5662f
-[-] sending to user account deposit_demo_ex2 from distribution account 630492b9fe8748678685c99760a5662f
-[-] sending to user account deposit_demo_ex3 from distribution account 630492b9fe8748678685c99760a5662f
-[-] sending to user account deposit_demo_ex1 from distribution account 81191cadd54b4a649c25acd279f4159a
-[-] sending to user account deposit_demo_ex2 from distribution account 81191cadd54b4a649c25acd279f4159a
-[-] sending to user account deposit_demo_ex3 from distribution account 81191cadd54b4a649c25acd279f4159a
-[-] sending to user account deposit_demo_ex1 from distribution account 3c4582980d964fa8b664f361060876e8
-[-] sending to user account deposit_demo_ex2 from distribution account 3c4582980d964fa8b664f361060876e8
-[-] sending to user account deposit_demo_ex3 from distribution account 3c4582980d964fa8b664f361060876e8
+  [-] distribution account created <Response [200]>
+  [-] distribution account created <Response [200]>
+  [-] distribution account created <Response [200]>
+ [-] collecting funds for distribution_account: d8d24a48dd9d472b8c4cb45330724d2c
+  [-] collecting 0.04066666666666667 from JCM_HA0
+  [-] collecting 0.04066666666666667 from JCM_HA1
+  [-] collecting 0.04066666666666667 from JCM_HA2
+  [-] collecting 0.04066666666666667 from JCM_HA3
+  [-] collecting 0.04066666666666667 from JCM_HA4
+  [-] collecting 0.04066666666666667 from JCM_HA5
+  [-] collecting 0.04066666666666667 from JCM_HA6
+  [-] collecting 0.04066666666666667 from JCM_HA7
+  [-] collecting 0.04066666666666667 from JCM_HA8
+  [-] collecting 0.04066666666666667 from JCM_HA9
+ [-] collecting funds for distribution_account: ae9e63e1a10348c2a4f8e3219bbaf9d5
+  [-] collecting 0.04066666666666667 from JCM_HA0
+  [-] collecting 0.04066666666666667 from JCM_HA1
+  [-] collecting 0.04066666666666667 from JCM_HA2
+  [-] collecting 0.04066666666666667 from JCM_HA3
+  [-] collecting 0.04066666666666667 from JCM_HA4
+  [-] collecting 0.04066666666666667 from JCM_HA5
+  [-] collecting 0.04066666666666667 from JCM_HA6
+  [-] collecting 0.04066666666666667 from JCM_HA7
+  [-] collecting 0.04066666666666667 from JCM_HA8
+  [-] collecting 0.04066666666666667 from JCM_HA9
+ [-] collecting funds for distribution_account: 19da97d8c918431580437759f1fee79b
+  [-] collecting 0.04066666666666667 from JCM_HA0
+  [-] collecting 0.04066666666666667 from JCM_HA1
+  [-] collecting 0.04066666666666667 from JCM_HA2
+  [-] collecting 0.04066666666666667 from JCM_HA3
+  [-] collecting 0.04066666666666667 from JCM_HA4
+  [-] collecting 0.04066666666666667 from JCM_HA5
+  [-] collecting 0.04066666666666667 from JCM_HA6
+  [-] collecting 0.04066666666666667 from JCM_HA7
+  [-] collecting 0.04066666666666667 from JCM_HA8
+  [-] collecting 0.04066666666666667 from JCM_HA9
+ [-] sending to user account f_test0 from distribution account d8d24a48dd9d472b8c4cb45330724d2c
+ [-] sending to user account f_test1 from distribution account d8d24a48dd9d472b8c4cb45330724d2c
+ [-] sending to user account f_test2 from distribution account d8d24a48dd9d472b8c4cb45330724d2c
+ [-] sending to user account f_test0 from distribution account ae9e63e1a10348c2a4f8e3219bbaf9d5
+ [-] sending to user account f_test1 from distribution account ae9e63e1a10348c2a4f8e3219bbaf9d5
+ [-] sending to user account f_test2 from distribution account ae9e63e1a10348c2a4f8e3219bbaf9d5
+ [-] sending to user account f_test0 from distribution account 19da97d8c918431580437759f1fee79b
+ [-] sending to user account f_test1 from distribution account 19da97d8c918431580437759f1fee79b
+ [-] sending to user account f_test2 from distribution account 19da97d8c918431580437759f1fee79b
 [*] Mixed coins sent to user addresses
-

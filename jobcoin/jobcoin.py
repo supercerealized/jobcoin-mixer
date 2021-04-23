@@ -108,13 +108,13 @@ class JobcoinMixerClient(object):
 			print(str(transaction_status)) # DEBUG
 			if transaction_status == 422:
 				print('Insufficient funds') # DEBUG
-				get_balance_and_transactions(house_account) # DEBUG
+				#get_balance_and_transactions(house_account) # DEBUG
 			else:
 				if transaction_status == 200:
-					print('successfully transfered {} to {}'.format(str(house_account_distribution), house_account))
-					get_balance_and_transactions(house_account) # DEBUG
+					print('[+] Successfully transfered {} to {}'.format(str(house_account_distribution), house_account))
+					get_balance_and_transactions(house_account) # DEBUG # prompt sees status
 				else:
-					get_balance_and_transactions(house_account) # DEBUG
+					get_balance_and_transactions(house_account) # DEBUG # prompt sees status
 		distribution_stop_timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-4]+'Z'
 		distribution_record = get_balance_and_transactions(intakeAddress)
 
@@ -130,6 +130,7 @@ class JobcoinMixerClient(object):
 			
 			print("Mixing...")
 			for other_house_accounts in JCM_house_accounts:
+				print('Mixing {}'.format(str(other_house_accounts)))
 				if house_account != other_house_accounts:
 					transaction_status = send_jobcoins(house_account, other_house_accounts, str(house_account_distribution))
 				else:
@@ -152,7 +153,7 @@ class JobcoinMixerClient(object):
 			accountAddress = uuid.uuid4().hex
 			response = create_coins_and_address(accountAddress)
 			distribution_accounts.append(accountAddress)
-			print('[-] distribution account created {}'.format(str(response)))
+			print('  [-] distribution account created {}'.format(str(response)))
 		return distribution_accounts
 
 	def distribute_proxy_payments(self, JCM_accounts_payable, JCM_house_accounts, distribution_accounts, amount):
@@ -161,9 +162,9 @@ class JobcoinMixerClient(object):
 		amount_distribution = float(amount) / len(distribution_accounts)
 		amount_collection = amount_distribution / len(JCM_house_accounts)
 		for distribution_account in distribution_accounts:
-			print('[-] collecting funds for distribution_account: {}'.format(str(distribution_account)))
+			print(' [-] collecting funds for distribution_account: {}'.format(str(distribution_account)))
 			for house_account in JCM_house_accounts:
-				print('[-] collecting {} from {}'.format(str(amount_collection), house_account))
+				print('  [-] collecting {} from {}'.format(str(amount_collection), house_account))
 				send_jobcoins(house_account, distribution_account, str(amount_collection))
 		distribution_account_data = {'amount_distribution': str(amount_distribution),'distribution_accounts': distribution_accounts}
 		return distribution_account_data
@@ -177,7 +178,7 @@ class JobcoinMixerClient(object):
 			if amount_distribution <= distribution_account_balance:
 				amount_distribution_per_user_account = float(amount_distribution) / len(user_accounts)
 				for user_account in user_accounts:
-					print('[-] sending to user account {} from distribution account {}'.format(user_account,distribution_account))
+					print(' [-] sending to user account {} from distribution account {}'.format(user_account,distribution_account))
 					transaction_status = send_jobcoins(distribution_account, user_account, str(amount_distribution_per_user_account))
 					if transaction_status == 422:
 						return {'transaction_failed_insufficient_funds':str(distribution_account)}
